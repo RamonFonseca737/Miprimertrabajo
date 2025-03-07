@@ -24,11 +24,8 @@ while True:
             else:
                 print(f"Error: {moto} no está en la lista.")
                 break
-    else:
-            print("No hay motos para borrar.")
-            break
     if opcion =="3":
-        print (opcion)
+        print (motors)
         break
     if opcion =="4":
         break
