@@ -1,32 +1,35 @@
 def mi_funcion():
     print("Hola desde modulo1")
 BIENVENIDA="""
-Te damos la bienvenida a de nuestra tienda de carros te daremos las opciones para escoger
-1) Agregar carro
-2) Eliminar carro
+Te damos la bienvenida a de nuestra tienda de motos te daremos las opciones para escoger
+1) Agregar motos
+2) Eliminar motos
 3) Ver la lista
 4) Salir del programa
 """
-cars = ["Nisan","BMW"]
-element = []
+motors = ["Nisan","BMW"]
 while True:
-    comands = input(BIENVENIDA)
-    if comands =="1":
+    opcion = input(BIENVENIDA)
+    if opcion =="1":
         element = input ("Agrega un carro ")
-        cars.append(element)
-        print(cars)
+        motors.append(element)
+        print(motors)
         break
-    if comands == "2":
-        element = input("Escribe el nombre del auto que quieres eliminar: ")
-        cars.remove(element)
-        print(f"{element} eliminado correctamente.")
+    if opcion == "2":
+        if motors:
+            moto = input("Escribe el nombre de la moto que quieres eliminar: ")
+            if moto in motors:
+                motors.remove(moto)
+                print(f"{moto} eliminado correctamente.")
+            else:
+                print(f"Error: {moto} no está en la lista.")
+                break
     else:
-        print(f"Advertencia: {element} no está en la lista.")
-        print("Lista actualizada:", cars)
+            print("No hay motos para borrar.")
+            break
+    if opcion =="3":
+        print (opcion)
         break
-    if comands =="3":
-        print (cars)
-        break
-    if comands =="4":
+    if opcion =="4":
         break
 print("Gracias por utilizar el inventario")
